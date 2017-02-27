@@ -1,0 +1,33 @@
+{
+  "name": "canary-feelings",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcwelborn/canary-feelings.git"
+  },
+	"author": "Cruz Welborn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gcwelborn/canary-feelings/issues"
+  },
+	"devDependencies": {
+		"react-scripts": "^0.9.0"
+	},
+	"dependencies": {
+		"material-ui": "^0.17.0",
+		"react": "^15.4.2",
+		"react-addons-shallow-compare": "^15.4.2",
+		"react-dom": "^15.4.2",
+		"react-router": "^3.0.2",
+		"react-tap-event-plugin": "^2.0.1",
+		"sentiment": "^3.0.0"
+	},
+  "homepage": "http://cruzwelborn.com/canary-feelings/build/"
+}
