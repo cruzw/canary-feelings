@@ -43,13 +43,29 @@ export default class App extends Component {
 		)
 	);
 
-	componentDidMount() {
-		let { twitterHandle } = this.props.params;
+	getDataAndSetIntoState = (twitterHandle) => {
+		this.setState({ isLoading: true });
 
 		this.twitterModel
 			.getAnalyzedAccountData(twitterHandle)
-			.then(rankings => this.setState({ rankings, isLoading: false, errorOccured: false }))
-			.catch(errorOccured => this.setState({ rankings: null, isLoading: false, errorOccured }));
+			.then(rankings => this.setState({
+				rankings, isLoading: false, errorOccured: false
+			}))
+			.catch(errorOccured => this.setState({
+				rankings: null, isLoading: false, errorOccured
+			}))
+	}
+
+	componentDidMount() {
+		let { twitterHandle } = this.props.params;
+		this.getDataAndSetIntoState(twitterHandle);
+	}
+
+	componentWillReceiveProps({ params }) {
+		let { twitterHandle } = this.props.params;
+		if (params.twitterHandle !== twitterHandle) {
+			this.getDataAndSetIntoState(params.twitterHandle);
+		}
 	}
 
 	render() {
