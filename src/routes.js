@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, hashHistory } from 'react-router'
 
 import HomePage from './pages/HomePage';
 import NoMatch from './pages/404';
@@ -11,7 +11,7 @@ import App from './components/App';
 const onChange = obj => window.ga && window.ga('send', 'pageview', obj.url);
 
 const Routes = () => (
-	<Router history={browserHistory} onChange={onChange}>
+	<Router history={hashHistory} onChange={onChange}>
 		<Route path="/" component={HomePage} />
 		<Route path="/user/:twitterHandle" component={App} />
 		<Route path="/attributions" component={Attributions} />
